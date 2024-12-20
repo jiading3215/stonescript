@@ -1,7 +1,7 @@
 ?foe=boss & foe.distance<=22 & hp*2<=maxhp
  activate P
 var flag=0
-var delay=20
+var delay=30
 ?foe.count>=5 & item.GetCoolDown(＂blade＂)<=0
  flag=1
 ?flag=1
@@ -10,7 +10,7 @@ var delay=20
  ?delay=0
   equip blade
   activate R
-  delay=20
+  delay=30
   flag=0
   screen.ResetOffset()
 ?foe=boss & foe.debuffs.count>2 &

@@ -13,7 +13,7 @@ var delay=30
   delay=30
   flag=0
   screen.ResetOffset()
-?foe=boss & foe.debuffs.count>2 &
+?foe=boss & foe.debuffs.count>5 &
 ^item.GetCoolDown(＂mask＂)<=0
  equipR mask
  activate R
@@ -28,7 +28,8 @@ var delay=30
    activate R
  :
   ?foe=boss
-   ?item.GetCoolDown(＂bash＂)<=0
+   ?foe.distance>10 &
+   ^item.GetCoolDown(＂bash＂)<=0
     equipR bash
    :?foe.distance<=12 &
    ^item.GetCoolDown(＂bardiche＂)<=0 |

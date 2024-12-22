@@ -21,24 +21,36 @@ var delay=30
  equipL ouroboros
  equipR star
 :
- ?foe=boss & foe.distance<=12 &
- ^item.GetCoolDown(＂bardiche＂)<=0 |
- ^item.GetCoolDown(＂bardiche＂)>878
-  equip bardiche
-  activate R
- :?foe.distance<=6 &
+ ?foe.distance<=6 &
  ^item.GetCoolDown(＂skeleton_arm＂)<=0
   equip skeleton
   ?item.CanActivate(＂skeleton_arm＂)
    activate R
  :
-  loadout 1
-  ?item.left.state=3
-   equipL ouroboros
+  ?foe=boss
+   ?item.GetCoolDown(＂bash＂)<=0
+    equipR bash
+   :?foe.distance<=12 &
+   ^item.GetCoolDown(＂bardiche＂)<=0 |
+   ^item.GetCoolDown(＂bardiche＂)>878
+    equip bardiche
+    activate R
+   :
+    loadout 2
+    ?item.left.state=3
+     equipL ouroboros
+     loadout 2
+    ?item.right.state=3
+     equipR star
+     loadout 2
+  :
    loadout 1
-  ?item.right.state=3
-   equipR star
-   loadout 1
+   ?item.left.state=3
+    equipL ouroboros
+    loadout 1
+   ?item.right.state=3
+    equipR star
+    loadout 1
 ?summon.count=0 & item.CanActivate()
  equipR fire_talisman
  activate R

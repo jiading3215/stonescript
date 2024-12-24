@@ -1,5 +1,3 @@
-?foe=boss & foe.distance<=22 & hp*2<=maxhp
- activate P
 var flag=0
 var delay=30
 ?foe.count>=5 & item.GetCoolDown(＂blade＂)<=0
@@ -24,6 +22,7 @@ var delay=30
  ?foe=boss
   ?foe.distance>10 &
   ^item.GetCoolDown(＂bash＂)<=0
+   equipL triskelion
    equipR bash
   :?foe.distance<=12 &
   ^item.GetCoolDown(＂bardiche＂)<=0 |

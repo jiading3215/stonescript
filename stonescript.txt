@@ -11,19 +11,22 @@ var delay=30
   delay=30
   flag=0
   screen.ResetOffset()
-?foe=boss & foe.debuffs.count>5 &
-^item.GetCoolDown(＂mask＂)<=0
- equipR mask
- activate R
 ?foe.distance>22
  equipL ouroboros
  equipR star
 :
  ?foe=boss
-  ?foe.distance>10 &
-  ^item.GetCoolDown(＂bash＂)<=0
-   equipL triskelion
-   equipR bash
+  ?foe.debuffs.count>5 &
+  ^item.GetCoolDown(＂mask＂)<=0
+   equipR mask
+   activate R
+  ?foe.distance>10
+   ?item.GetCoolDown(＂bash＂)<=0
+    equipL triskelion
+    equipR bash
+   :?item.GetCoolDown(＂dash＂)<=0
+    equipL triskelion
+    equipR dash
   :?foe.distance<=12 &
   ^item.GetCoolDown(＂bardiche＂)<=0 |
   ^item.GetCoolDown(＂bardiche＂)>878

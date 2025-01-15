@@ -1,3 +1,14 @@
+var counter=0
+func Moond()
+ ?counter=0
+  loadout 3
+ :?counter=1
+  loadout 4
+ :?counter=2
+  loadout 5
+ counter++
+ ?counter>2
+  counter=0
 var flag=0
 var delay=30
 ?foe.count>=5 & item.GetCoolDown("blade")<=0
@@ -38,13 +49,7 @@ var delay=30
    equip bardiche
    activate R
   :
-   loadout 2
-   ?item.left.state=3
-    equipL ouroboros
-    loadout 2
-   ?item.right.state=3
-    equipR star
-    loadout 2
+   Moond()
  :
   loadout 1
   ?item.left.state=3

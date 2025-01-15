@@ -27,6 +27,11 @@ var delay=30
    :?item.GetCoolDown("dash")<=0
     equipL triskelion
     equipR dash
+  :?foe.armor>0 &
+  ^item.GetCoolDown("heavy_hammer")<=0 |
+  ^item.GetCoolDown("heavy_hammer")>586
+   equip heavy hammer
+   activate R
   :?foe.distance<=12 &
   ^item.GetCoolDown("bardiche")<=0 |
   ^item.GetCoolDown("bardiche")>878

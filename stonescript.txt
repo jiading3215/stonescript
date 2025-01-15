@@ -1,6 +1,6 @@
 var flag=0
 var delay=30
-?foe.count>=5 & item.GetCoolDown(＂blade＂)<=0
+?foe.count>=5 & item.GetCoolDown("blade")<=0
  flag=1
 ?flag=1
  screen.next()
@@ -17,19 +17,19 @@ var delay=30
 :
  ?foe=boss
   ?foe.debuffs.count>5 &
-  ^item.GetCoolDown(＂mask＂)<=0
+  ^item.GetCoolDown("mask")<=0
    equipR mask
    activate R
   ?foe.distance>10
-   ?item.GetCoolDown(＂bash＂)<=0
+   ?item.GetCoolDown("bash")<=0
     equipL triskelion
     equipR bash
-   :?item.GetCoolDown(＂dash＂)<=0
+   :?item.GetCoolDown("dash")<=0
     equipL triskelion
     equipR dash
   :?foe.distance<=12 &
-  ^item.GetCoolDown(＂bardiche＂)<=0 |
-  ^item.GetCoolDown(＂bardiche＂)>878
+  ^item.GetCoolDown("bardiche")<=0 |
+  ^item.GetCoolDown("bardiche")>878
    equip bardiche
    activate R
   :

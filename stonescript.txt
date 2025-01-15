@@ -29,7 +29,7 @@ var delay=30
     equipR dash
   :?foe.armor>0 &
   ^item.GetCoolDown("heavy_hammer")<=0 |
-  ^item.GetCoolDown("heavy_hammer")>736
+  ^item.GetCoolDown("heavy_hammer")>646
    equip heavy hammer
    activate R
   :?foe.distance<=12 &

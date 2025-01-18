@@ -24,7 +24,7 @@ var delay=30
   flag=0
   screen.ResetOffset()
 ?foe.distance>22
- equipL ouroboros
+ equipL triskelion
  equipR star
 :
  ?foe=boss
@@ -57,7 +57,7 @@ var delay=30
    equipL ouroboros
    loadout 1
   ?item.right.state=3
-   equipR star
+   equipR ouroboros
    loadout 1
 ?summon.count=0 & item.CanActivate()
  equipR fire_talisman

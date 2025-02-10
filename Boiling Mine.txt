@@ -1,0 +1,46 @@
+import UI/MindstoneButton
+var counter=0
+func Moond()
+ ?counter=0
+  loadout 3
+ :?counter=1
+  loadout 4
+ :?counter=2
+  loadout 5
+ counter++
+ ?counter>2
+  counter=0
+var flag=0
+var delay=30
+?foe.count>=5 & item.GetCoolDown("blade")<=0
+ flag=1
+?flag=1
+ screen.next()
+ delay--
+ ?delay=0
+  equip blade
+  activate R
+  delay=30
+  flag=0
+  screen.ResetOffset()
+?foe.distance>22
+ equipL triskelion
+ equipR star
+:
+ ?foe=boss
+  ?foe.debuffs.count>5 &
+  ^item.GetCoolDown("mask")<=0
+   equipR mask
+   activate R
+  :?foe=guardian & foe.debuffs.count>0
+   activate P
+  :
+   loadout 1
+ :
+  ?hp=maxhp
+   loadout 1
+  :
+   loadout 2
+?summon.count=0 & item.CanActivate()
+ equipR fire_talisman
+ activate R

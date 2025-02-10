@@ -32,7 +32,7 @@ var delay=30
   ^item.GetCoolDown("mask")<=0
    equipR mask
    activate R
-  :?foe=guardian & foe.debuffs.count>0
+  :?foe=guardian & foe.debuffs.count=1
    activate P
   :
    loadout 1

@@ -1,15 +1,4 @@
 import UI/MindstoneButton
-var counter=0
-func Moond()
- ?counter=0
-  loadout 3
- :?counter=1
-  loadout 4
- :?counter=2
-  loadout 5
- counter++
- ?counter>2
-  counter=0
 var flag=0
 var delay=30
 ?foe.count>=5 & item.GetCoolDown("blade")<=0
@@ -32,6 +21,11 @@ var delay=30
   ^item.GetCoolDown("mask")<=0
    equipR mask
    activate R
+  :?foe=bomb
+   ?item.GetCoolDown("bash")<=0
+    equipR bash
+   :
+    equipR mind
   :?foe=guardian & foe.debuffs.count=1
    activate P
   :

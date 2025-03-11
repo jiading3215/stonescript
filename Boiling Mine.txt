@@ -12,29 +12,44 @@ var delay=30
   delay=30
   flag=0
   screen.ResetOffset()
-?foe.distance>22
+?pickup.distance<=5
  equipL triskelion
  equipR star
+:?foe.distance>22
+ equipL triskelion
+ equipR compound
 :
  ?foe=boss
-  ?foe.debuffs.count>5 &
-  ^item.GetCoolDown("mask")<=0
-   equipR mask
-   activate R
-  :?foe=bomb
+  ?foe=bomb
    ?item.GetCoolDown("bash")<=0
+    equipL triskelion
     equipR bash
    :
+    equipL triskelion
     equipR mind
   :?foe=guardian & foe.debuffs.count=1
    activate P
   :
    loadout 1
  :
-  ?hp=maxhp
-   loadout 1
-  :
+  ?foe.distance>=17
+   equipL triskelion
+   equipR compound
+  :?foe.distance<=16 & foe.distance>=11
+   ?item.GetCoolDown("bash")<=0
+    equipL triskelion
+    equipR bash
+   :?item.GetCoolDown("dash")<=0
+    equipL triskelion
+    equipR dash
+   :
+    equipL triskelion
+    equipR compound
+  :?foe.distance<=6
    loadout 2
 ?summon.count=0 & item.CanActivate()
  equipR fire_talisman
  activate R
+?time=1
+ equipL triskelion
+ equipR compound

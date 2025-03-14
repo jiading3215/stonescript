@@ -65,6 +65,8 @@ var delay=30
    MoonF()
   :
    MoonI()
+  ?foe=phase3
+   activate P
 ?summon.count=0 & item.CanActivate()
  equipR fire_talisman
  activate R

@@ -63,13 +63,12 @@ var delay=30
    equipL triskelion
    equipR compound
  :?foe.distance<=5
-  ?foe=ice
-   MoonF()
-  :
-   MoonI()
+  MoonF()
 ?summon.count=0 & item.CanActivate()
  equipR fire_talisman
  activate R
 ?time=1
  equipL triskelion
  equipR compound
+?time=30
+ activate P

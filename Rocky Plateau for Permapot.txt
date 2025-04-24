@@ -1,0 +1,75 @@
+var FCT=import UI/FreeChestTracker
+FCT.Main()
+import UI/MindstoneButton
+var counterF=0
+func MoonF()
+ ?counterF=0
+  equipL moon
+  equipR fire sword D
+ :?counterF=1
+  equipL moon
+  equipR vigor sword dL
+ :?counterF=2
+  equipL vigor sword dL
+  equipR fire sword D
+ counterF++
+ ?counterF>2
+  counterF=0
+var counterI=0
+func MoonI()
+ ?counterI=0
+  equipL moon
+  equipR ice sword dI
+ :?counterI=1
+  equipL moon
+  equipR vigor sword dL
+ :?counterI=2
+  equipL vigor sword dL
+  equipR ice sword dI
+ counterI++
+ ?counterI>2
+  counterI=0
+var flag=0
+var delay=30
+?foe.count>=5 & item.GetCoolDown("blade")<=0
+ flag=1
+?flag=1
+ screen.next()
+ delay--
+ ?delay=0
+  equip blade
+  activate R
+  delay=30
+  flag=0
+  screen.ResetOffset()
+?pickup.distance<=5
+ equipL triskelion
+ equipR star
+:?foe.distance>22
+ equipL triskelion
+ equipR compound
+:
+ ?foe.distance>=17
+  equipL triskelion
+  equipR compound
+ :?foe.distance<=16 & foe.distance>=11
+  ?item.GetCoolDown("bash")<=0
+   equipL triskelion
+   equipR bash
+  :?item.GetCoolDown("dash")<=0
+   equipL triskelion
+   equipR dash
+  :
+   equipL triskelion
+   equipR compound
+ :?foe.distance<=5
+  ?foe=ice
+   MoonF()
+  :
+   MoonI()
+?summon.count=0 & item.CanActivate()
+ equipR fire_talisman
+ activate R
+?time=1
+ equipL triskelion
+ equipR compound

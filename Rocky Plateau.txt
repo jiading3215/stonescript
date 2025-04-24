@@ -1,3 +1,5 @@
+var FCT=import UI/FreeChestTracker
+FCT.Main()
 import UI/MindstoneButton
 var counterF=0
 func MoonF()

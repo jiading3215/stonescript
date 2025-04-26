@@ -73,4 +73,12 @@ var delay=30
  equipR compound
 ?time=30
  activate P
+var t=0
+?foe=phase2
+ t=0
+:?foe=phase3
+ t++
+?t=50
+ equipL triskelion
+ equipR mind
 */

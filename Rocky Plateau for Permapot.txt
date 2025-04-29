@@ -5,31 +5,17 @@ import UI/MindstoneButton
 var counterF=0
 func MoonF()
  ?counterF=0
-  equipL moon
-  equipR fire sword D
+  equipL fire sword D
+  equipR moon
  :?counterF=1
-  equipL moon
-  equipR vigor sword dL
- :?counterF=2
   equipL vigor sword dL
-  equipR fire sword D
+  equipR moon
+ :?counterF=2
+  equipL fire sword D
+  equipR vigor sword dL
  counterF++
  ?counterF>2
   counterF=0
-var counterI=0
-func MoonI()
- ?counterI=0
-  equipL moon
-  equipR ice sword dI
- :?counterI=1
-  equipL moon
-  equipR vigor sword dL
- :?counterI=2
-  equipL vigor sword dL
-  equipR ice sword dI
- counterI++
- ?counterI>2
-  counterI=0
 var flag=0
 var delay=30
 ?foe.count>=5 & item.GetCoolDown("blade")<=0
@@ -73,12 +59,4 @@ var delay=30
  equipR compound
 ?time=30
  activate P
-var t=0
-?foe=phase2
- t=0
-:?foe=phase3
- t++
-?t=50
- equipL triskelion
- equipR mind
 */
